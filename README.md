@@ -12,6 +12,7 @@ Custom spread sheet in C# WPF. With column graph support.
 ![Graph](https://raw.githubusercontent.com/uzairrj/Custom-SpreadSheet/master/readme/Graph.JPG "Graph")
 
 **Supported Slicing**
+
 A1:Z26
 
 - Displays error message on invalid input.
