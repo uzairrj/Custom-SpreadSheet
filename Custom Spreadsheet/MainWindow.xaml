@@ -1,0 +1,256 @@
+﻿<Window x:Class="customProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        xmlns:local="clr-namespace:customProject"
+        mc:Ignorable="d"
+        Title="Spread Sheet" Height="600" Width="1200">
+
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+            <Setter Property="TextWrapping" Value="WrapWithOverflow"></Setter>
+            <Setter Property="MinWidth" Value="50"></Setter>
+        </Style>
+    </Window.Resources>
+
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Open" Click="onLoad"/>
+                <MenuItem Header="_Save" Click="onSave"/>
+                <MenuItem Header="_New" Click="onNew"/>
+                <MenuItem Header="_Exit" Click="onExit"/>
+            </MenuItem>
+            <MenuItem Header="_Operations">
+                <MenuItem Header="_Sum" Click="onSumClicked" />
+                <MenuItem Header="_Mean" Click="onMeanClicked" />
+                <MenuItem Header="_Mode" Click="onModeClicked"/>
+                <MenuItem Header="_Median" Click="onMedianClicked" />
+            </MenuItem>
+        </Menu>
+
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Background="#FFFDFDFD">
+
+            <Grid Height="1300" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="681"/>
+                    <RowDefinition Height="343"/>
+                </Grid.RowDefinitions>
+
+                <Grid Background="Black" Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" Height="707">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="586"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="31"/>
+                        <ColumnDefinition Width="1299*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Background="#FFE8F046" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White">X</Label>
+
+                    <Grid Grid.Row="0" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Row="0" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE87474" Foreground="White" MinWidth="50">A</Label>
+                        <Label Grid.Row="0" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE87474" Foreground="White" MinWidth="50">B</Label>
+                        <Label Grid.Row="0" Grid.Column="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE87474" Foreground="White" MinWidth="50">C</Label>
+                        <Label Grid.Row="0" Grid.Column="3" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE87474" Foreground="White" MinWidth="50">D</Label>
+                        <Label Grid.Row="0" Grid.Column="4" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE87474" Foreground="White" MinWidth="50">E</Label>
+                        <Label Grid.Row="0" Grid.Column="5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE87474" Foreground="White" MinWidth="50">F</Label>
+                        <Label Grid.Row="0" Grid.Column="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE87474" Foreground="White" MinWidth="50">G</Label>
+                        <Label Grid.Row="0" Grid.Column="7" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE87474" Foreground="White" MinWidth="50">H</Label>
+                        <Label Grid.Row="0" Grid.Column="8" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE87474" Foreground="White" MinWidth="50">I</Label>
+                        <Label Grid.Row="0" Grid.Column="9" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE87474" Foreground="White" MinWidth="50">J</Label>
+                        <Label Grid.Row="0" Grid.Column="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE87474" Foreground="White" MinWidth="50">K</Label>
+                        <Label Grid.Row="0" Grid.Column="11" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE87474" Foreground="White" MinWidth="50">L</Label>
+                        <Label Grid.Row="0" Grid.Column="12" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE87474" Foreground="White" MinWidth="50">M</Label>
+                        <Label Grid.Row="0" Grid.Column="13" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE87474" Foreground="White" MinWidth="50">N</Label>
+                        <Label Grid.Row="0" Grid.Column="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE87474" Foreground="White" MinWidth="50">O</Label>
+                        <Label Grid.Row="0" Grid.Column="15" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE87474" Foreground="White" MinWidth="50">P</Label>
+                        <Label Grid.Row="0" Grid.Column="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE87474" Foreground="White" MinWidth="50">Q</Label>
+                        <Label Grid.Row="0" Grid.Column="17" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE87474" Foreground="White" MinWidth="50">R</Label>
+                        <Label Grid.Row="0" Grid.Column="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE87474" Foreground="White" MinWidth="50">S</Label>
+                        <Label Grid.Row="0" Grid.Column="19" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE87474" Foreground="White" MinWidth="50">T</Label>
+                        <Label Grid.Row="0" Grid.Column="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE87474" Foreground="White" MinWidth="50">U</Label>
+                        <Label Grid.Row="0" Grid.Column="21" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE87474" Foreground="White" MinWidth="50">V</Label>
+                        <Label Grid.Row="0" Grid.Column="22" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE87474" Foreground="White" MinWidth="50">W</Label>
+                        <Label Grid.Row="0" Grid.Column="23" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE87474" Foreground="White" MinWidth="50">X</Label>
+                        <Label Grid.Row="0" Grid.Column="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE87474" Foreground="White" MinWidth="50">Y</Label>
+                        <Label Grid.Row="0" Grid.Column="25" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFE87474" Foreground="White" MinWidth="50">Z</Label>
+
+                    </Grid>
+
+                    <Grid Grid.Row="1" Grid.Column="0" Margin="0,0,0,-89">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Column="0" Grid.Row="0" Background="#FF6476EC" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">1</Label>
+                        <Label Grid.Column="0" Grid.Row="1" Background="#FF6476EC" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">2</Label>
+                        <Label Grid.Column="0" Grid.Row="2" Background="#FF6476EC" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">3</Label>
+                        <Label Grid.Column="0" Grid.Row="3" Background="#FF6476EC" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">4</Label>
+                        <Label Grid.Column="0" Grid.Row="4" Background="#FF6476EC" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">5</Label>
+                        <Label Grid.Column="0" Grid.Row="5" Background="#FF6476EC" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">6</Label>
+                        <Label Grid.Column="0" Grid.Row="6" Background="#FF6476EC" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">7</Label>
+                        <Label Grid.Column="0" Grid.Row="7" Background="#FF6476EC" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">8</Label>
+                        <Label Grid.Column="0" Grid.Row="8" Background="#FF6476EC" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">9</Label>
+                        <Label Grid.Column="0" Grid.Row="9" Background="#FF6476EC" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">10</Label>
+                        <Label Grid.Column="0" Grid.Row="10" Background="#FF6476EC" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">11</Label>
+                        <Label Grid.Column="0" Grid.Row="11" Background="#FF6476EC" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">12</Label>
+                        <Label Grid.Column="0" Grid.Row="12" Background="#FF6476EC" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">13</Label>
+                        <Label Grid.Column="0" Grid.Row="13" Background="#FF6476EC" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">14</Label>
+                        <Label Grid.Column="0" Grid.Row="14" Background="#FF6476EC" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">15</Label>
+                        <Label Grid.Column="0" Grid.Row="15" Background="#FF6476EC" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">16</Label>
+                        <Label Grid.Column="0" Grid.Row="16" Background="#FF6476EC" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">17</Label>
+                        <Label Grid.Column="0" Grid.Row="17" Background="#FF6476EC" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">18</Label>
+                        <Label Grid.Column="0" Grid.Row="18" Background="#FF6476EC" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">19</Label>
+                        <Label Grid.Column="0" Grid.Row="19" Background="#FF6476EC" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">20</Label>
+                        <Label Grid.Column="0" Grid.Row="20" Background="#FF6476EC" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">21</Label>
+                        <Label Grid.Column="0" Grid.Row="21" Background="#FF6476EC" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">22</Label>
+                        <Label Grid.Column="0" Grid.Row="22" Background="#FF6476EC" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">23</Label>
+                        <Label Grid.Column="0" Grid.Row="23" Background="#FF6476EC" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">24</Label>
+                        <Label Grid.Column="0" Grid.Row="24" Background="#FF6476EC" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">25</Label>
+                        <Label Grid.Column="0" Grid.Row="25" Background="#FF6476EC" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">26</Label>
+
+
+
+                    </Grid>
+
+                    <Grid x:Name="textBoxGrid" Grid.Row="1" Grid.Column="1" Margin="0,0,0,-89" Background="#FFF00CC6">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                        </Grid.ColumnDefinitions>
+
+                    </Grid>
+
+                </Grid>
+
+                <Grid Background="White" Grid.Row="1">
+                    <StackPanel Margin="0,0,0,-400">
+                        <Label HorizontalAlignment="Center" Margin="0,30,0,0" FontWeight="Bold"  FontSize="30">Generate Graph</Label>
+                        <TextBox x:Name="graphText" Width="400" Height="40" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FF3ED460" Margin="0,30"></TextBox>
+                        <Button Content="Generate"  HorizontalAlignment="Center" VerticalAlignment="Top" Height="41" Width="132" Background="#FF8D35B6" Foreground="White" Click="generateGraph"/>
+
+                        <lvc:CartesianChart x:Name="myGraph" Series="{Binding SeriesCollection}" LegendLocation="Left" Grid.Column="0" Background="White" Height="362">
+                            <lvc:CartesianChart.AxisX>
+                                <lvc:Axis Title="Columns" Labels="{Binding Labels}"></lvc:Axis>
+                            </lvc:CartesianChart.AxisX>
+                            <lvc:CartesianChart.AxisY>
+                                <lvc:Axis Title="Value" LabelFormatter="{Binding Formatter}"></lvc:Axis>
+                            </lvc:CartesianChart.AxisY>
+                        </lvc:CartesianChart>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </ScrollViewer>
+    </DockPanel>
+
+</Window>
